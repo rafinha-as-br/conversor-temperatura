@@ -27,7 +27,7 @@ function processarConversao($valor, $origem, $destino) {
 
     $valorCelsius = $valor; // ponto de partida
 
-    // Converte para celsius se necessário
+    // Converte para celsius se necessário 
     switch ($origem) {
         case 'fahrenheit':
             $valorCelsius = fahrenheitParaCelsius($valor);

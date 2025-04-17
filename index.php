@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Conversor de Temperatura</title>
+  <title>Conversor de Temperatura</title >
   <style>
     body {
       display: flex;
@@ -59,6 +59,26 @@
       font-size: 24px;
       cursor: pointer;
     }
+
+    .botoes-meio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  }
+
+  .botao-meio {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+
   </style>
 </head>
 
@@ -137,6 +157,24 @@
         alert("Erro ao converter: " + error);
       });
     });
+
+    document.getElementById("reiniciar").addEventListener("click", function () {
+    // Limpa os inputs
+    document.querySelectorAll(".input-temperatura").forEach(el => el.value = "");
+
+    // Remove classes de botões ativos (se você estiver usando)
+    document.querySelectorAll(".botao").forEach(btn => {
+      btn.classList.remove("ativo");
+    });
+
+    // Desativa os botões da direita até nova seleção
+    document.querySelectorAll(".bloco")[2].querySelectorAll(".botao").forEach(btn => {
+      btn.disabled = true;
+    });
+
+    // Pode adicionar também o reset visual das cores aqui (se você for fazer depois)
+    console.log("Sistema reiniciado.");
+  });
   </script>
 </body>
 </html>

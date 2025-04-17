@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $tipoAtual = isset($_POST['tipo_atual']) ? $_POST['tipo_atual'] : null;
     $tipoDestino = isset($_POST['tipo_destino']) ? $_POST['tipo_destino'] : null;
 
-    // Verifica se todos os campos estão preenchidos
+    // Verifica se todos os campos estão preenchidos 
     if ($valor === null || $tipoAtual === null || $tipoDestino === null) {
         $resultado = "Erro: Preencha todos os campos.";
     } else {
