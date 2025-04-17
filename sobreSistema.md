@@ -46,7 +46,7 @@
 
   // Testes Unitários Realizados:
 
-  // Os testes foram implementados com PHPUnit no arquivo tests/ConversorTest.php. Cada função principal de conversão e de controle de fluxo foi testada com diferentes cenários, incluindo situações comuns e casos de exceção.
+  // Os testes foram implementados com PHPUnit no arquivo tests/ConversorTest.php. Cada função principal de conversão e de controle de fluxo foi testada com diferentes cenários, incluindo situações comuns e casos de exceção . 
 
   // Lista de testes:
       // testCelsiusParaFahrenheit: Testa se a conversão de Celsius para Fahrenheit está correta para valores como 0°C e 100°C.

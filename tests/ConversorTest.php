@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../conversor.php';
+require_once __DIR__ . '/../conversor.php'; 
 
 class ConversorTest extends TestCase
 {

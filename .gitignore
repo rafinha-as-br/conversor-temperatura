@@ -5,7 +5,7 @@
 .env
 
 # Arquivos temporários e de cache
-*.log
+*.log 
 *.cache
 *.tmp
 
