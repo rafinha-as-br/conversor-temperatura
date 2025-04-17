@@ -50,4 +50,50 @@ class ConversorTest extends TestCase
           // Teste de valor inválido
           $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao('invalid', 'celsius', 'fahrenheit'));
      }
+
+     public function testEntradasInvalidas()
+     {
+          // Teste de entrada nula
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(null, 'celsius', 'fahrenheit'));
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(0, null, 'fahrenheit'));
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(0, 'celsius', null));
+
+          // Teste de entrada booleana
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(true, 'celsius', 'fahrenheit'));
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(false, 'celsius', 'fahrenheit'));
+
+          // Teste de valores extremos
+          $this->assertEquals(1.8e+308, processarConversao(1.0e+308, 'celsius', 'fahrenheit'));
+          $this->assertEquals(-1.8e+308, processarConversao(-1.0e+308, 'celsius', 'fahrenheit'));
+     }
+
+     public function testValoresNegativos()
+     {
+          // Teste de valores negativos
+          $this->assertEquals(-40, processarConversao(-40, 'celsius', 'fahrenheit'));
+          $this->assertEquals(233.15, processarConversao(-40, 'celsius', 'kelvin'));
+     }
+
+     public function testPrecisaoDecimal()
+     {
+          // Teste de precisão decimal
+          $this->assertEquals(32.9, processarConversao(0.5, 'celsius', 'fahrenheit'));
+          $this->assertEquals(273.65, processarConversao(0.5, 'celsius', 'kelvin'));
+     }
+
+     public function testEntradasVazias()
+     {
+          // Teste de entradas vazias
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao('', 'celsius', 'fahrenheit'));
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(0, '', 'fahrenheit'));
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(0, 'celsius', ''));
+     }
+
+     public function testTiposInesperados()
+     {
+          // Teste de tipos inesperados
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao([], 'celsius', 'fahrenheit'));
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(0, [], 'fahrenheit'));
+          $this->assertEquals("Erro: dados inválidos ou conversão redundante.", processarConversao(0, 'celsius', []));
+     }
 }
