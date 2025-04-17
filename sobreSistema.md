@@ -40,5 +40,5 @@
         // se o usuário  clicar no botão de reiniciar no meio, volta para o início
         // terceiro teste: Se as variáveis foram todas resetadas e esta tudo pronto para uma nova conversão...
           
-
+        //Para rodar os testes usar : vendor\bin\phpunit --bootstrap vendor\autoload.php tests\ConversorTest.php
     */
